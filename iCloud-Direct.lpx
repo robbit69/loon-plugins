@@ -1,0 +1,23 @@
+#!name = iCloud 直连
+#!desc = 开着代理时让 iCloud / Apple 服务直连，并指定用国内 DNS 解析，解决 iCloud 照片加载不了的问题。含 [Rule] 直连规则与 [Host] 解析指定两部分。
+#!author = robbit69
+#!tag = iCloud,Apple,直连
+#!type = normal
+
+[Rule]
+DOMAIN-SUFFIX,icloud.com,DIRECT
+DOMAIN-SUFFIX,icloud.com.cn,DIRECT
+DOMAIN-SUFFIX,icloud-content.com,DIRECT
+DOMAIN-SUFFIX,icloud-content.com.cn,DIRECT
+DOMAIN-SUFFIX,apple-cloudkit.com,DIRECT
+DOMAIN-SUFFIX,cdn-apple.com,DIRECT
+DOMAIN-SUFFIX,mzstatic.com,DIRECT
+DOMAIN-SUFFIX,me.com,DIRECT
+DOMAIN-SUFFIX,apple.com,DIRECT
+
+[Host]
+*.icloud.com = server:223.5.5.5
+*.icloud-content.com = server:223.5.5.5
+*.apple.com = server:223.5.5.5
+*.cdn-apple.com = server:223.5.5.5
+*.apple-cloudkit.com = server:223.5.5.5
